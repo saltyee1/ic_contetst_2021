@@ -1,0 +1,13 @@
+rtl simulation : 
+$ncverilog -sv tb.v geofence.v +access+r
+
+gata level simulation :
+$dv -no_gui 
+$source dc_syn.tcl
+$ncverilog -sv tb.sv geofence_syn.v -v tsmc13_neg.v +ncmaxdelays +access+r +define+SDF
+
+Final Result (in LBP_syn.qor)
+Area : 21821 
+Clock Cycle : 30 ns 
+Execution Time : 34650 NS
+Score : 21821 < 22000 (Rank A)
